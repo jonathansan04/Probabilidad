@@ -14,15 +14,19 @@
     </style>
     <body>
         <h1 align="center">Distribución binomial </h1>
-		<p><font size="3" face="Comic Sans MS,arial,verdana">Presentado por: Jonathan Andres Santos Solorzano </font></p>
-		<p><font size="3" face="Comic Sans MS,arial,verdana">Codigo:20182020074</font></p>
-		<p><font size="3" face="Comic Sans MS,arial,verdana">Universidad Distrital Francisco Jose de Caldas</font></p>
+		<p><font size="3" face="Comic Sans MS,arial,verdana">Presentado por Jonathan Andres Santos Solórzano (20182020074)</font></p>
+		<p><font size="3" face="Comic Sans MS,arial,verdana">Estudiante de la Universidad Distrital Francisco Jose de Caldas, Bogotá D.C</font></p>
         <marquee><font size="3" face="Comic Sans MS,arial,verdana">Distribución binomial</font></marquee>
 		
         <table align="left" width="100%">
             <tr>
                 <td>
 					<h2>Ejercicio propuesto</h2>
+					
+					<aside>  
+					<p><font size="3" face="Comic Sans MS,arial,verdana">Tomado de:</p>
+					<cite>Walpole, R. E. (2012). Probabilidad y Estadística para Ingeniería y Ciencias (9.a ed.). PEARSON EDUCACION.Ejercicio 5,28, p.151,</cite>  
+					</aside>
 					<p ><font size="3" face="Comic Sans MS,arial,verdana">De acuerdo con un estudio publicado por un grupo de
 					sociólogos de la Universidad de Massachusetts,<br>
 					aproximadamente <q><i>p</i></q> de los consumidores de Valium
@@ -33,17 +37,10 @@
 					Exactamente <q><i>x</i></q> comenzaron a consumir Valium por problemas psicológicos.</font>
 					</p>
 				</td>
-				<td> 
-					<h2>Bibliografia</h2>
-					<aside>  
-					<cite>Walpole, R. E. (2012). Probabilidad y Estadística para Ingeniería y Ciencias (9.a ed.). PEARSON EDUCACION.Ejercicio 5,28, p.151,</cite>  
-					<p>
-					<a href="https://vereniciafunez94hotmail.files.wordpress.com/2014/08/8va-probabilidad-y-estadistica-para-ingenier-walpole_8.pdf ">https://vereniciafunez94hotmail.files.wordpress.com/2014/08/8va-probabilidad-y-estadistica-para-ingenier-walpole_8.pdf  </a>
-					</p>
-					</aside>
-				</td>
+				
 			</tr>
 		</table>
+		
         <table align="left" width="100%"  cellpadding="2" border="4">
             <tr>
                 <td bgcolor="#F1E4E1">
@@ -52,6 +49,7 @@
                          describe el número de éxitos al realizar n experimentos  <br> o ensayos independientes entre sí, 
                           de una variable aleatoria.</font>
                     </p> 
+					<p><font size="3" face="Comic Sans MS,arial,verdana"> Puede ver mas en: .</font> </p>
                     <a href="https://economipedia.com/definiciones/distribucion-binomial.html ">https://economipedia.com/definiciones/distribucion-binomial.html  </a>
                 </td>
                 <td>
@@ -81,10 +79,11 @@
         <form name="valida" action="" target="request" onsubmit="validaVacio()">
         <table width="100%" >
             <tr>
+			
                 <td>
                     <table align="center" width="100%"  cellpadding="1" border="4">
                         <tr>
-                            <p><font size="4" face="Comic Sans MS,arial,verdana">Ingrese los datos</font></p>
+                            <p><font size="4" face="Comic Sans MS,arial,verdana">Ingrese los datos del problema:</font></p>
                             <td><font size="3" face="Comic Sans MS,arial,verdana">p:</font>
                             </td>
                             <td>
@@ -105,14 +104,7 @@
                                 <INPUT type="number" name="n3"  id="n3" min="0"   step="1" size="4" maxlength="5" placeholder="1"  maxlength="3" onchange="esEntero1('n3')" required >
                             </td>
                         </tr>
-                        <tr>
-                            <td><font size="3" face="Comic Sans MS,arial,verdana">Resultado</font>
-                            </td>
-                            <td>
-                                <input type="text" id="resultado" readonly size="4" maxlength="5">=</input> 
-                                <input type="text" id="resultado1" readonly size="4" maxlength="5"> % </input>
-                            </td>
-                        </tr>
+                     
                         <tr>
                             <td colspan="2">
                                 <input name="Calcular" type="button" onClick="valor()" value="Calcular" />
@@ -122,7 +114,19 @@
                     </table>
                 </td>
                 <td>
-                    <table>
+				    <font size="3" face="Comic Sans MS,arial,verdana">Diagrama de probabilidades p vs q:</font>
+                    <canvas id="myChart"></canvas>
+					<br>
+                </td>
+            </tr>
+        </table>     
+		 <br>
+		 <br>
+		<font size="3" face="Comic Sans MS,arial,verdana">Resultado distribución binomial:</font>
+		<table >
+		    <tr>
+			    <td>
+				    <table align="center" width="100%"  cellpadding="1" border="4">
                         <tr>
                             <td><font size="3" face="Comic Sans MS,arial,verdana">n:</font>
                             </td>
@@ -151,14 +155,22 @@
                                 <input type="text" id="q" readonly size="4" maxlength="5"></input>
                             </td>
                         </tr>
-                    </table>
-                </td>
-                <td>
-                    <canvas id="myChart"></canvas>
-
-                </td>
+						<tr>
+                            <td><font size="3" face="Comic Sans MS,arial,verdana">Resultado</font>
+                            </td>
+                            <td>
+                                <input type="text" id="resultado" readonly size="4" maxlength="5">=</input> 
+                                <input type="text" id="resultado1" readonly size="4" maxlength="5"> % </input>
+                            </td>
+                        </tr>
+				    </table>
+				</td>
+				<td>
+				<font size="3" face="Comic Sans MS,arial,verdana">Diagrama resultado distribución binomial:</font>
+				<canvas id="myChart1"></canvas>
+				</td>
             </tr>
-        </table>     
+		</table>
         </form> 
 
         
@@ -216,18 +228,32 @@
                 document.getElementById("resultado").value = resultado;
                 document.getElementById("resultado1").value = resultado*100
                 var ctx = document.getElementById('myChart').getContext('2d');
+				var ctx1 = document.getElementById('myChart1').getContext('2d');
                 var chart = new Chart(ctx, {
                 type: 'pie',
                 data:{
-	             datasets: [{
+	            datasets: [{
 	           	data: [p1,q1],
 	        	backgroundColor: ['#42a5f5', 'red'],
 	        	label: 'Probabilidad'}],
 	        	labels: ['p','q']},
                 options: {responsive: true}
                 });
-
-                
+				
+				var ress = document.getElementById("resultado").value;
+                document.getElementById("resultado").value=ress;
+                var res = 1-parseFloat(ress);
+      
+                var chart1 = new Chart(ctx1, {
+                type: 'pie',
+                data:{
+	            datasets: [{
+	           	data: [resultado,res],
+	        	backgroundColor: ['#42a5f5', 'red'],
+	        	label: 'Probabilidad'}],
+	        	labels: ['Resultado','res']},
+                options: {responsive: true}
+                });
             }
 			function validaVacio() {
 			var nn = document.getElementById("n1").value;
